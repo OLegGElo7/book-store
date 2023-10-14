@@ -1,0 +1,27 @@
+.bookItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border: 2px solid #ffce1a;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+
+  .bookItem__content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    strong {
+      margin-right: 90px;
+      font-size: 24px;
+    }
+  }
+  .bookItem__btn {
+    display: flex;
+    flex-direction: column;
+  }
+}

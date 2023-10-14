@@ -1,0 +1,49 @@
+main {
+  .About__wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .About__preview {
+      display: flex;
+      h1 {
+        color: #0d0842;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: normal;
+      }
+      p {
+        color: #0d0842;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    img {
+    }
+    .About__bookNotes {
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        .About__form-input {
+          margin-right: 50px;
+        }
+      }
+      h2 {
+        margin-bottom: 50px;
+        text-align: center;
+        color: #0d0842;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: normal;
+      }
+      p {
+        text-align: center;
+        color: #0d0842;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}
