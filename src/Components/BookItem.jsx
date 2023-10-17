@@ -13,7 +13,7 @@ const BookItem = (BookItemProps) => {
         </div>
       </div>
       <div className="bookItem__btn">
-        <Button style={{ marginBottom: 15 }}>Delete</Button>
+        {/* <Button style={{ marginBottom: 15 }}>Delete</Button>*/}
         <Button onClick={() => BookItemProps.remove(BookItemProps.list)}>
           Delete
         </Button>

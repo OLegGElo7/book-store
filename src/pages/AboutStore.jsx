@@ -1,32 +1,17 @@
 import React, { useState } from "react";
 import "../style/AboutStore.scss";
-import BookList from "./BookList";
-import InputSearch from "./UI/InputSearch/InputSearch";
-import Button from "./UI/Button/Button";
-import BookListForm from "./BookListForm";
-import axios from "axios";
+import BookList from "../Components/BookList";
+import BookListForm from "../Components/BookListForm";
+import Modal from "../Components/UI/Modal/Modal";
+import Button from "../Components/UI/Button/Button";
 
 const AboutStore = () => {
-  const [lists, setLists] = useState([
-    {
-      id: 1,
-      title: "Запиши заголовок книги",
-      body: "Запиши почему понравилась книга",
-    },
-    {
-      id: 2,
-      title: "Запиши заголовок книги 2",
-      body: "Запиши почему понравилась книга 2",
-    },
-    {
-      id: 3,
-      title: "Запиши заголовок книги 3",
-      body: "Запиши почему понравилась книга 3",
-    },
-  ]);
+  const [lists, setLists] = useState([]);
+  const [modal, setModal] = useState(false);
 
   const createList = (newPost) => {
     setLists([...lists, newPost]);
+    setModal(false);
   };
 
   const removeList = (list) => {
@@ -51,7 +36,10 @@ const AboutStore = () => {
           </div>
           <div className="About__bookNotes">
             <h2>Book notes</h2>
-            <BookListForm createFormProps={createList} />
+            <Button onClick={() => setModal(true)}>123</Button>
+            <Modal visible={modal} setVisible={setModal}>
+              <BookListForm createFormProps={createList} />
+            </Modal>
             {lists.length !== 0 ? (
               <BookList remove={removeList} lists={lists} />
             ) : (

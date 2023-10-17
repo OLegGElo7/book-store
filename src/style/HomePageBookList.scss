@@ -1,0 +1,25 @@
+.BookList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  background-color: #fffff8;
+  border-radius: 0px 0px 45px 45px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  box-shadow: 0px 0px 0px 0px rgba(254, 175, 56, 0.1),
+    -1px 1px 3px 0px rgba(254, 175, 56, 0.1),
+    -5px 2px 6px 0px rgba(254, 175, 56, 0.09),
+    -12px 5px 8px 0px rgba(254, 175, 56, 0.05),
+    -21px 8px 9px 0px rgba(254, 175, 56, 0.01),
+    -33px 13px 10px 0px rgba(254, 175, 56, 0);
+  .BookList__undefined {
+    p {
+      color: #dd0f0f;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+}
