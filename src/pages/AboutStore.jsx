@@ -23,7 +23,7 @@ const AboutStore = () => {
       <div className="App__wrapper">
         <div className="About__wrapper">
           <div className="About__preview">
-            <div>
+            <div className="About__title">
               <h1>New Releases This Week</h1>
               <p>
                 It's time to update your reading list with some of the latest

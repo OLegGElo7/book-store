@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../style/HomePage.scss";
 import InputSearch from "../Components/UI/InputSearch/InputSearch";
 import ButtonInput from "../Components/UI/ButtonInput/ButtonInput";
@@ -6,28 +6,20 @@ import axios from "axios";
 import HomePageBookList from "../Components/HomePageBookList";
 import SortSelect from "../Components/UI/Select/SortSelect";
 import Loading from "../Components/UI/Loading/Loading";
+import postService from "../API/PostService";
 
 const HomePage = () => {
   const [search, setSearch] = useState("");
   const [books, setBooks] = useState([]);
   const [isBooksLoading, setIsBooksLoading] = useState(false);
 
-  async function googleBooks(event) {
-    try {
-      event.preventDefault();
-      setIsBooksLoading(true);
-      const response = await axios.get(
-        "https://www.googleapis.com/books/v1/volumes?q=" +
-          search +
-          "&key=AIzaSyCmK-uV0Te3m8ZoENQz67PsS1cHnu32Fqc" +
-          "&maxResults=40"
-      );
-      console.log(response.data.items);
-      setBooks(response.data.items);
-      setIsBooksLoading(false);
-    } catch (err) {
-      console.log(err);
-    }
+  async function fetctBooks(event) {
+    event.preventDefault();
+    setIsBooksLoading(true);
+    const books = await postService.googleBooks(search);
+    setBooks(books);
+    setSearch(search);
+    setIsBooksLoading(false);
   }
 
   return (
@@ -45,7 +37,7 @@ const HomePage = () => {
                     type="text"
                     placeholder="What are you looking for ? "
                   />
-                  <ButtonInput onClick={googleBooks} />
+                  <ButtonInput onClick={fetctBooks} />
                 </form>
               </div>
               <div className="HomePage__filtr">
